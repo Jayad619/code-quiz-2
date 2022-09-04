@@ -1,0 +1,1 @@
+const startBtn = document.getElementById("js-quiz-start");

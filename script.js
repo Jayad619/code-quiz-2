@@ -29,4 +29,58 @@ document.querySelector(".highscore-actions__clear").addEventListener("click", ()
         HighScores.clear();
         HighScores.viewHighScores();
     }
+    
 });
+
+startBtn.addEventListener("click", () => {
+    game.startQuiz(70, true);
+});
+
+
+class Timer {
+    constructor (remainingTime = 60, game) {
+        if (game) {
+            this.remainingTime = remainingTime;
+            this.timer = null;
+        }   
+    }
+
+    start () {
+        document.querySelector(".remaining-time--visible").classList.add('js-is-counting');
+
+        if (this.timer === null) {
+            clearTimeout(this.timer);
+        }
+
+        this.tick();
+    }
+
+    modifyTime (change) {
+        this.remainingTime += change;
+    }
+
+    tick () {
+        this.remainingTime -= 1;
+
+
+        if (this.remainingTime <= 0) {
+            // time up!
+            game.timerElement.innerHTML = 0;
+
+            clearTimeout(this.timer);
+            game.endQuiz();
+        } else {
+            game.timerElement.innerHTML = this.remainingTime;
+
+            this.timer = setTimeout(() => {
+                this.tick();
+            }, 1000);
+        }        
+    }
+
+    end () {
+        clearTimeout(this.timer);
+        this.timer = null;
+        document.querySelector(".remaining-time--visible").classList.remove('js-is-counting');
+    }
+}

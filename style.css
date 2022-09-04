@@ -1,0 +1,115 @@
+/*  CSS vars */
+:root {
+    --purple: #f30cae;
+    --btn-green: var(--purple);
+}
+
+/* CSS reset */
+*,::after,::before{box-sizing:border-box}*{margin:0}body,html{height:100%}body{line-height:1.5;-webkit-font-smoothing:antialiased}canvas,img,picture,svg,video{display:block;max-width:100%}button,input,select,textarea{font:inherit}h1,h2,h3,h4,h5,h6,p{overflow-wrap:break-word}#__next,#root{isolation:isolate}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main {
+    padding: 5em 1.5em 1.5em;
+}
+
+section,
+.section {
+    display: none;
+}
+
+section {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.125em 2.05em;
+    gap: 0.66em;
+    border-radius: 2em;
+    border: 2px solid #ccc;
+    max-width: 800;
+    margin: 0 auto;
+}
+
+section.active,
+.section.active {
+    display: flex;
+    justify-content: center;
+}
+
+/** ------------------------------------------------------------------------
+    Header
+*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--purple);
+    color: #221f1f;
+    padding: 1.5em;
+}
+
+.remaining-time {
+    display: none;
+}
+
+.remaining-time.js-is-counting {
+    display: flex;
+}
+
+/** ------------------------------------------------------------------------
+    Question block
+*/
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 0.375em;
+    padding-left: 0;
+    width: 100%;
+}
+
+.questions-list input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    clip: 0;
+}
+
+.questions-list span {
+    padding: 0.75em;
+    background-color: var(--purple);
+    border-radius: 0.315em;
+    width: 100%;
+    color: #312d2d;
+}
+
+.questions-list label {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.questions-list input:is(:checked) + span {
+    background: rgb(255, 34, 0);
+}
+
+.phase-enter-initials input {
+    margin-left: 0.5em;
+}
+
+
+/** ------------------------------------------------------------------------
+    Buttons
+*/
+.button {
+    --border-radius: 9px;
+
+    background-color: var(--btn-green);
+    color: #ffffff;
+    border-radius: var(--border-radius);
+    padding: 0.75em;
+    border: 0;
+}

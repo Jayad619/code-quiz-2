@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Code Quiz Challenge!</title>
+</head>
+<body>
+    <header>
+        <a id=js-view-leaderboard>Click here to view Highscores!<i class="fas fa-hand-point-left fa-lg"></i>
+        </i></a> 
+
+        <div class="remaining-time remaining-time--visible">
+            Time: <div id="js-time-remaining"></div>
+        </div>
+
+    </header>
+    <main>
+        <section id="js-section-intro" class="active">
+                <h1> Code Quiz </h1>
+                <p>Answer the code related questions before time runs out!!</p>
+                <p> Each time you answer a question wrong, it will deduct 10 seconds from the timer. </p>
+                <p> 🤓 Good luck! 🤓 </p>
+            <button id="js-quiz-start" class="button button--primary">Start Quiz</button>
+        </section>
+
+        <!-- BEGIN: HIGHSCORES -->
+        <section id="js-section-highscore-input" class="phase-enter-initials"></section>
+        <!-- END: HIGHSCORES -->
+
+        <!-- BEGIN: LEADERBOARD -->
+        <section id="js-section-leaderboard">
+            <h1>Highscores</h1>
+            <div class="highscores-list"></div>
+            <div class="highsore-actions">
+                <button class="highscore-actions__back button button__primary">Go back</button>
+                <button class="highscore-actions__clear button button__primary">Clear highscores</button>
+            </div>
+        </section>
+        <!-- END: LEADERBOARD -->
+
+        <!-- BEGIN: QUESTION INPUTS -->
+        <div id="js-section-questions" class="section">
+            <div id="questions"></div>
+        </div>
+        <!-- END: QUESTION INPUTS -->
+    </main>
+    <script src="./script.js"></script>
+    <script src="./questions.js"></script>
+
+</body>
+
+</html>
